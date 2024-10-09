@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modificar datos de gatos</title>
+</head>
+
+<body>
+    <h1>Modificar datos de gatos</h1>
+    <form action="/modificar_gatos" method="post">
+        <h2>Selecciona un gato para modificar sus datos:</h2>
+        {% for gato in gatos %}
+        <input type="radio" name="modificar_gato" value="{{ gato[0] }}">{{ gato[1] }}<br>
+        {% endfor %}
+        <h2>Ingrese la nueva información:</h2>
+        <label for="nueva_edad">Nueva Edad:</label>
+        <input type="text" name="nueva_edad"><br>
+        <label for="nuevo_pelo">Nuevo Pelo:</label>
+        <input type="text" name="nuevo_pelo"><br>
+        <label for="nuevo_comportamiento">Nuevo Comportamiento:</label>
+        <input type="text" name="nuevo_comportamiento"><br>
+        <button type="submit">Modificar datos del gato</button>
+    </form>
+</body>
+
+</html>

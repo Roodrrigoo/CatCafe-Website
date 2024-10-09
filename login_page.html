@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eliminar y Agregar Elementos</title>
+</head>
+<body>
+    <h1>Eliminar y Agregar elementos al menú</h1>
+    <form action="/borrar" method="post">
+        <h2>Selecciona elementos para eliminar:</h2>
+        {% for item in items %}
+            <input type="checkbox" name="borrar_item" value="{{ item }}">{{ item }}<br>
+        {% endfor %}
+        <h2>Selecciona elementos para agregar:</h2>
+        <input type="checkbox" name="agregar_item" value="ArrozconLeche">ArrozconLeche<br>
+        <input type="checkbox" name="agregar_item" value="Cafe">Cafe<br>
+        <!-- Agrega más elementos según sea necesario -->
+        <button type="submit">Eliminar y agregar elementos</button>
+    </form>
+</body>
+</html>
